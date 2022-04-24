@@ -1,12 +1,11 @@
 import Header from './components/Header';
+import Highlight from './components/Highlight';
 
 function App() {
     return (
-        <div className="">
+        <div className="select-none">
             <Header />
-            <div>
-                <img src="https://wallpaperboat.com/wp-content/uploads/2021/12/19/79926/spider-man-no-way-home-12.jpg"></img>
-            </div>
+            <Highlight />
         </div>
     );
 }

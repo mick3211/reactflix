@@ -27,6 +27,10 @@ code {
         @apply text-neutral-200 text-xs lg:text-base transition-opacity duration-300 hover:opacity-75;
     }
 
+    .navlink-dropdown {
+        @apply text-neutral-200 px-10 py-3 block;
+    }
+
     .navlink.active {
         @apply font-bold hover:opacity-100 cursor-default;
     }
