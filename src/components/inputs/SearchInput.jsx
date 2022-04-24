@@ -33,7 +33,7 @@ export default function SearchInput({ icon, ...props }) {
                     type="text"
                     placeholder="Títulos, gente e gêneros"
                     ref={inputRef}
-                    className="w-full pl-8 py-1 inline-block bg-[rgb(20_20_20)] outline-none border border-neutral-200"
+                    className="w-full pl-8 py-1 inline-block bg-neutral-1000 outline-none border border-neutral-200"
                 />
             </div>
         </div>

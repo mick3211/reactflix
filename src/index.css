@@ -46,4 +46,23 @@ code {
     .navlink.active {
         @apply font-bold hover:opacity-100 cursor-default;
     }
+
+    .row-button {
+        @apply hidden sm:inline-block text-neutral-200 from-neutral-900 to-transparent h-[calc(100%-32px)] px-4 absolute z-20 top-1/2 -translate-y-1/2 hover:bg-neutral-900/75;
+    }
+
+    .grey-border {
+        text-shadow: 2px 0 0 rgb(115 115 115), -2px 0 0 rgb(115 115 115),
+            0 2px 0 rgb(115 115 115), 0 -2px 0 rgb(115 115 115),
+            1px 1px rgb(115 115 115), -1px -1px 0 rgb(115 115 115),
+            1px -1px 0 rgb(115 115 115), -1px 1px 0 rgb(115 115 115);
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        @apply w-0 h-0;
+    }
+
+    .no-scrollbar {
+        scrollbar-width: none;
+    }
 }
