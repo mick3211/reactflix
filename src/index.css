@@ -17,6 +17,18 @@ code {
 }
 
 @layer base {
+    ::-webkit-scrollbar {
+        @apply w-1;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-red-600 hover:bg-red-700;
+    }
+
     body {
         @apply bg-neutral-900;
     }
