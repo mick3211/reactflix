@@ -15,7 +15,7 @@ export default function RowCard(props) {
 
     return (
         <div
-            className="w-[17vw] min-w-[160px] cursor-pointer relative"
+            className="w-[17vw] min-w-[160px] min-h-[90px] cursor-pointer relative"
             onMouseEnter={handleHover}
             onMouseLeave={handleMouseLeave}
         >
