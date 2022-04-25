@@ -44,6 +44,7 @@ export default function Row({ title, ...props }) {
             </div>
             <div className="relative w-full group">
                 <button
+                    type="button"
                     className="row-button left-0 bg-gradient-to-r"
                     onClick={scrollToLeft}
                 >
@@ -52,6 +53,7 @@ export default function Row({ title, ...props }) {
                         className="invisible group-hover:visible"
                     />
                 </button>
+
                 <div className="py-4 overflow-x-auto no-scrollbar" ref={rowRef}>
                     <div className="w-min pl-[5%] flex gap-2 overflow-y-hidden ">
                         {props.children}
@@ -59,6 +61,7 @@ export default function Row({ title, ...props }) {
                 </div>
 
                 <button
+                    type="button"
                     className="row-button right-0 bg-gradient-to-l"
                     onClick={scrollRight}
                 >
