@@ -18,17 +18,23 @@ function App() {
     }, []);
 
     return (
-        <div className="select-none" onClick={() => console.log(movies)}>
+        <div className="select-none">
             <Header />
 
             <section id="highlight">
-                {<Highlight content={movies.popular?.at(0)} />}
+                {
+                    <Highlight
+                        content={movies.popular?.at(
+                            Math.floor(Math.random() * movies.popular.length)
+                        )}
+                    />
+                }
             </section>
 
             <section id="top10">
                 <Row title="Top 10 filmes no Brasil hoje">
                     {movies?.popular?.slice(0, 10).map((movie, index) => (
-                        <RowCard key={movie.id}>
+                        <RowCard key={movie.id} content={movie}>
                             <div className="flex justify-end h-full items-center w-full">
                                 <span className="grey-border text-7xl lg:text-[8vw] translate-x-2 -translate-y-2 scale-[2] text-neutral-1000 font-extrabold">
                                     {index + 1}
@@ -38,7 +44,8 @@ function App() {
                                         'http://image.tmdb.org/t/p/original' +
                                         movie.poster_path
                                     }
-                                    className="w-3/5 z-10 object-contain"
+                                    className="w-3/5 z-10 object-contain rounded-md"
+                                    loading="lazy"
                                 />
                             </div>
                         </RowCard>
@@ -48,8 +55,8 @@ function App() {
 
             <section id="toprated" className="mt-10">
                 <Row title="Filmes mais bem avaliados">
-                    {movies?.top_rated?.map((movie, index) => (
-                        <RowCard key={movie.id}>
+                    {movies?.top_rated?.map(movie => (
+                        <RowCard key={movie.id} content={movie}>
                             <img
                                 src={
                                     'http://image.tmdb.org/t/p/original' +

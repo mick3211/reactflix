@@ -55,7 +55,7 @@ export default function Row({ title, ...props }) {
                 </button>
 
                 <div className="py-4 overflow-x-auto no-scrollbar" ref={rowRef}>
-                    <div className="w-min px-[5%] flex gap-2 overflow-y-hidden ">
+                    <div className="w-min px-[5%] flex gap-4 overflow-y-hidden">
                         {props.children}
                     </div>
                 </div>
