@@ -2,7 +2,7 @@ import { FaPlay } from 'react-icons/fa';
 import { FiInfo } from 'react-icons/fi';
 import Button from './inputs/Button';
 
-export default function Highlight({ content, ...props }) {
+export default function Highlight({ content }) {
     return (
         <>
             <div className="container px-4 pt-16 mx-auto h-[80vh] min-h-[500px] flex items-center">

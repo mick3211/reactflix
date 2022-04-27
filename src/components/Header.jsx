@@ -19,7 +19,7 @@ export default function Header() {
 
     return (
         <header
-            className={`fixed top-0 left-0 w-screen select-none transition-colors duration-300 ${
+            className={`fixed top-0 left-0 z-50 w-screen select-none transition-colors duration-300 ${
                 isOpaque ? 'bg-neutral-900' : 'bg-transparent'
             }`}
         >

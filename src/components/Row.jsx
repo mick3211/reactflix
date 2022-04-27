@@ -8,10 +8,13 @@ export default function Row({ title, ...props }) {
 
     const scrollRight = () => {
         const scroll = rowRef.current.scrollLeft + window.innerWidth;
+        const innerWidth = rowRef.current.firstElementChild.clientWidth;
+
         if (!isFullScrolled) {
             rowRef.current.scrollTo({ left: scroll, behavior: 'smooth' });
             setIsScrolled(true);
-            if (scroll >= rowRef.current.clientWidth) setIsFullScrolled(true);
+            if (scroll >= innerWidth - window.innerWidth)
+                setIsFullScrolled(true);
         } else {
             rowRef.current.scrollTo({ left: 0, behavior: 'smooth' });
             setIsFullScrolled(false);
@@ -24,10 +27,10 @@ export default function Row({ title, ...props }) {
         if (isScrolled) {
             rowRef.current.scrollTo({ left: scroll, behavior: 'smooth' });
             setIsFullScrolled(false);
-            if (scroll <= rowRef.current.clientWidth) setIsScrolled(false);
+            if (scroll <= 0) setIsScrolled(false);
         } else {
             rowRef.current.scrollTo({
-                left: rowRef.current.clientWidth,
+                left: rowRef.current.firstElementChild.clientWidth,
                 behavior: 'smooth',
             });
             setIsFullScrolled(true);
@@ -55,7 +58,7 @@ export default function Row({ title, ...props }) {
                 </button>
 
                 <div className="py-4 overflow-x-auto no-scrollbar" ref={rowRef}>
-                    <div className="w-min px-[5%] flex gap-4 overflow-y-hidden">
+                    <div className="w-min px-[10%] flex gap-4 overflow-y-hidden">
                         {props.children}
                     </div>
                 </div>
