@@ -9,15 +9,17 @@ export default function Index() {
     const [topRated, setTopRated] = useState([]);
     const [popular, setPopular] = useState([]);
     const [horrorMovies, setHorrorMovies] = useState([]);
+    const [comedyMovies, setComedyMovies] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         Promise.all(
             requests.map(request => fetch(request).then(resp => resp.json()))
-        ).then(([popular, topRated, horrorMovies]) => {
+        ).then(([popular, topRated, horrorMovies, comedyMovies]) => {
             setTopRated(topRated.results);
             setPopular(popular.results);
             setHorrorMovies(horrorMovies.results);
+            setComedyMovies(comedyMovies.results);
             setIsLoading(false);
         });
     }, []);
@@ -52,6 +54,8 @@ export default function Index() {
                                     }
                                     className="w-3/5 z-10 object-contain rounded-md"
                                     loading="lazy"
+                                    alt={movie.title}
+                                    title={movie.title}
                                 />
                             </div>
                         </RowCard>
@@ -69,6 +73,9 @@ export default function Index() {
                                     movie.poster_path
                                 }
                                 className="w-full object-contain rounded-md"
+                                loading="lazy"
+                                alt={movie.title}
+                                title={movie.title}
                             />
                         </RowCard>
                     ))}
@@ -85,6 +92,28 @@ export default function Index() {
                                     movie.poster_path
                                 }
                                 className="w-full object-contain rounded-md"
+                                loading="lazy"
+                                alt={movie.title}
+                                title={movie.title}
+                            />
+                        </RowCard>
+                    ))}
+                </Row>
+            </section>
+
+            <section id="comedy" className="mt-10">
+                <Row title="Filmes de comédia">
+                    {comedyMovies?.map(movie => (
+                        <RowCard key={movie.id} content={movie}>
+                            <img
+                                src={
+                                    'http://image.tmdb.org/t/p/w300' +
+                                    movie.poster_path
+                                }
+                                className="w-full object-contain rounded-md"
+                                loading="lazy"
+                                alt={movie.title}
+                                title={movie.title}
                             />
                         </RowCard>
                     ))}

@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
 import Header from './components/Header';
-import Modal from './components/Modal';
 import Index from './pages/Index';
 
 function App() {
