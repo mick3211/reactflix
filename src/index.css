@@ -51,6 +51,10 @@ code {
         @apply hidden sm:inline-block text-neutral-200 from-neutral-900 to-transparent h-[calc(100%-32px)] px-4 absolute z-20 top-1/2 -translate-y-1/2 hover:bg-neutral-900/75;
     }
 
+    .backdrop {
+        @apply w-screen h-screen backdrop-blur-sm fixed top-0 z-50;
+    }
+
     .grey-border {
         text-shadow: 2px 0 0 rgb(115 115 115), -2px 0 0 rgb(115 115 115),
             0 2px 0 rgb(115 115 115), 0 -2px 0 rgb(115 115 115),

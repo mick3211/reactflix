@@ -1,8 +1,12 @@
+import { useContext } from 'react';
 import { FaPlay } from 'react-icons/fa';
 import { FiInfo } from 'react-icons/fi';
 import Button from './inputs/Button';
+import { modalContext } from './modal/ModalContext';
 
 export default function Highlight({ content }) {
+    const { showModal } = useContext(modalContext);
+
     return (
         <>
             <div className="container px-4 pt-16 mx-auto h-[80vh] min-h-[500px] flex items-center">
@@ -20,6 +24,7 @@ export default function Highlight({ content }) {
                                 <FiInfo className="text-neutral-200 text-3xl" />
                             }
                             opacity="40"
+                            onClick={() => showModal(content)}
                         >
                             <span className="text-neutral-200">
                                 Mais informações
